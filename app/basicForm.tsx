@@ -38,21 +38,26 @@ const BasicForm = () => (
         isSubmitting,
         /* and other goodies */
       }) => (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className='p-8'>
+          Email:
           <input
             type="email"
             name="email"
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.email}
+            className="p-4 m-6 w-64 bg-white shadow rounded "
           />
+          Password:
           {errors.email && touched.email && errors.email}
+          
           <input
             type="password"
             name="password"
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.password}
+            className="p-4 m-6 w-64 bg-white shadow rounded"
           />
           {errors.password && touched.password && errors.password}
           <button type="submit" disabled={isSubmitting}>
